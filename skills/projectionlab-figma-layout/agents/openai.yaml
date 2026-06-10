@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProjectionLab Figma Layout"
+  short_description: "Create ProjectionLab-inspired dashboard layouts in Figma."
+  default_prompt: "Create a ProjectionLab-style financial planning dashboard layout in a new Figma file."

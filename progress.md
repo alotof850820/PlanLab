@@ -37,3 +37,6 @@
 - Added design spec at `docs/superpowers/specs/2026-06-10-projectionlab-dashboard-layout-design.md`.
 - Verification passed: searched Figma design-system assets; no reusable components/styles/variables were returned.
 - Verification passed: final Figma write completed after correcting text alignment and text value type issues.
+- Created project-local skill at `skills/projectionlab-figma-layout/SKILL.md` to capture the ProjectionLab-inspired Figma layout workflow.
+- Added generated skill UI metadata at `skills/projectionlab-figma-layout/agents/openai.yaml`.
+- Verification attempted: `python C:\Users\User\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills\projectionlab-figma-layout` failed because the local Python environment is missing `yaml`.
