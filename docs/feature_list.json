@@ -41,6 +41,12 @@
       "title": "Refine Home Chart And Move Page Metrics",
       "status": "completed",
       "scope": "Use Chart.js for the asset trend chart with hover asset tooltip and quantitative X/Y axes, keep the homepage limited to total assets, asset trend, and asset allocation, move stock metrics to stocks, and move house metrics and logic to house."
+    },
+    {
+      "id": "canonical-docs-workflow-state",
+      "title": "Centralize Workflow State Under Docs",
+      "status": "completed",
+      "scope": "Update global Codex workflow rules to use docs/feature_list.json, docs/progress.md, docs/specs/<feature-id>.md, and docs/plans/<feature-id>.md as canonical paths, then migrate this project state and existing plan/spec files into those docs locations."
     }
   ]
 }

@@ -90,3 +90,8 @@
 - Runtime content verification passed: `/house` contained `買房規劃`, `買房支出`, `頭期款`, `年房貸支出`, `貸款期間`, and `買房參數`.
 - User pointed out that requested features were only recorded in `progress.md` and not visible as feature records in `feature_list.json`.
 - Updated `feature_list.json` to keep exactly one `in_progress` umbrella feature while adding completed records for the Figma layout, Figma workflow skill, local sidebar/footer shell, HTML UI adaptation, TSX feature reorganization, and Chart.js/page-metrics refinement.
+- User approved changing the global Codex workflow to centralize state artifacts under `docs/`, similar to the Superpowers plan/spec organization.
+- Updated global `C:\Users\User\.codex\AGENTS.md` to use canonical paths: `docs/feature_list.json`, `docs/progress.md`, `docs/specs/<feature-id>.md`, and `docs/plans/<feature-id>.md`.
+- Updated global `C:\Users\User\.codex\docs\harness.md`, `PLANS.md`, `project-context.md`, and `verification-commands.md` to describe the canonical docs-based state structure and legacy root-file fallback.
+- Migrated this project state files from root to `docs/feature_list.json` and `docs/progress.md`.
+- Migrated existing plan/spec artifacts from `docs/superpowers/plans` and `docs/superpowers/specs` into canonical `docs/plans` and `docs/specs`.
