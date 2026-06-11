@@ -24,21 +24,6 @@ const stockMetrics = computed(() => [
   },
 ])
 
-const stocks = [
-  { sym: 'TSMC', name: '台積電', price: '$156.40', change: '+3.2%', up: true, cap: '$809B', rating: 'buy' },
-  { sym: 'NVDA', name: 'Nvidia', price: '$1,048', change: '+1.8%', up: true, cap: '$2.58T', rating: 'buy' },
-  { sym: 'AAPL', name: 'Apple', price: '$178.20', change: '-0.4%', up: false, cap: '$2.77T', rating: 'hold' },
-  { sym: 'QQQ', name: 'Nasdaq ETF', price: '$462.10', change: '+0.9%', up: true, cap: 'ETF', rating: 'hold' },
-  { sym: 'MSFT', name: 'Microsoft', price: '$415.30', change: '+2.1%', up: true, cap: '$3.09T', rating: 'buy' },
-  { sym: 'META', name: 'Meta', price: '$512.60', change: '-1.2%', up: false, cap: '$1.31T', rating: 'watch' },
-]
-
-const ratingClass = (rating: string) => {
-  if (rating === 'buy') return 'tag-buy'
-  if (rating === 'hold') return 'tag-hold'
-  return 'tag-watch'
-}
-
 useHead({
   title: '股票 | PlanLab',
 })
@@ -106,35 +91,6 @@ useHead({
           <input v-model.number="plan.startWithdrawalYear.value" class="w-full" type="range" min="1" :max="plan.totalYears.value + 1" step="1">
         </label>
       </div>
-    </section>
-
-    <section class="card overflow-hidden p-0">
-      <table class="w-full table-fixed border-collapse text-[13px]">
-        <thead>
-          <tr>
-            <th class="w-[15%] table-th">代號</th>
-            <th class="w-[22%] table-th">名稱</th>
-            <th class="w-[15%] table-th">現價</th>
-            <th class="w-[13%] table-th">漲跌</th>
-            <th class="w-[18%] table-th">市值</th>
-            <th class="w-[17%] table-th">評級</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="stock in stocks" :key="stock.sym">
-            <td class="table-td table-strong">{{ stock.sym }}</td>
-            <td class="table-td table-muted">{{ stock.name }}</td>
-            <td class="table-td table-strong">{{ stock.price }}</td>
-            <td class="table-td" :class="stock.up ? 'up' : 'dn'">{{ stock.change }}</td>
-            <td class="table-td table-muted">{{ stock.cap }}</td>
-            <td class="table-td">
-              <span class="tag" :class="ratingClass(stock.rating)">
-                {{ stock.rating }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </section>
   </div>
 </template>

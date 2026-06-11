@@ -19,6 +19,12 @@
       "scope": "Register @playwright/mcp in the global Codex config so future sessions can use Playwright MCP browser automation for UI verification, including local dashboard contrast and rendering checks."
     },
     {
+      "id": "remove-stocks-symbol-table",
+      "title": "Remove Stocks Symbol Table",
+      "status": "completed",
+      "scope": "Remove the stocks page symbol table and its unused mock stock data while keeping the stocks KPI cards, investment settings, and contribution/withdrawal planning sections."
+    },
+    {
       "id": "figma-projectionlab-layout-file",
       "title": "Create ProjectionLab-Style Figma Layout",
       "status": "completed",

@@ -135,3 +135,6 @@
 - Verification passed: `npm run audit:contrast` reported `Contrast failures: 0`.
 - Verification passed: `npm run build`.
 - Verification passed: `rg "text-slate-(900|800|700|600|500)|bg-slate-50|text-(red|green|blue|pink|orange|purple)-600" app` returned no matches.
+- User requested removing the stocks symbol table from the stocks page.
+- Removed the mock stock list, `ratingClass`, and the stocks table section from `app/pages/stocks.vue`, leaving KPI cards, investment settings, and contribution/withdrawal planning intact.
+- Added completed feature record `remove-stocks-symbol-table` to `docs/feature_list.json`.
