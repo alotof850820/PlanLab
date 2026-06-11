@@ -126,3 +126,12 @@
 - Confirmed `@playwright/mcp` is available from npm and verified CLI execution with `npx -y @playwright/mcp@0.0.76 --version`.
 - Registered Playwright MCP in global `C:\Users\User\.codex\config.toml` with `msedge`, `headless`, and `isolated` options so future Codex sessions can use browser automation without requiring a separate Chromium download first.
 - Added completed feature record `playwright-mcp-global-install` to `docs/feature_list.json` while keeping `projectionlab-dashboard-figma-layout` as the single active WIP item.
+- User requested Playwright-based contrast testing and improvements for low-contrast text/table styling, and pointed out that `projectionlab-dashboard-figma-layout` should already be completed.
+- Added `scripts/audit-contrast.mjs` and `npm run audit:contrast` to scan visible text contrast across `/`, `/stocks`, `/house`, `/details`, and `/settings` using Playwright with headless Edge.
+- Improved the contrast audit to parse Tailwind v4 `oklch(...)` computed colors; the baseline scan found 273 contrast failures, mostly from light-theme Tailwind text utilities left on dark cards/tables.
+- Updated the dark dashboard styles: brighter secondary/muted text, stronger table header/row/border contrast, accessible positive/negative colors, dark-friendly table utility classes, darker blue logo/avatar backgrounds, and brighter Chart.js ticks/grid/tooltip colors.
+- Replaced low-contrast `text-slate-*`, `bg-slate-50`, and color utility leftovers in the stocks, details, and house pages with shared dark-theme classes.
+- Updated `docs/feature_list.json`: marked `projectionlab-dashboard-figma-layout` as completed and added completed feature record `planlab-contrast-accessibility-audit`.
+- Verification passed: `npm run audit:contrast` reported `Contrast failures: 0`.
+- Verification passed: `npm run build`.
+- Verification passed: `rg "text-slate-(900|800|700|600|500)|bg-slate-50|text-(red|green|blue|pink|orange|purple)-600" app` returned no matches.

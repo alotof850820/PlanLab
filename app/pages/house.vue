@@ -41,14 +41,14 @@ useHead({
       <article v-for="metric in houseMetrics" :key="metric.label" class="kpi">
         <p class="kpi-label">{{ metric.label }}</p>
         <p class="kpi-value">{{ metric.value }}</p>
-        <p class="kpi-delta text-slate-500">{{ metric.detail }}</p>
+        <p class="kpi-delta muted">{{ metric.detail }}</p>
       </article>
     </section>
 
     <section class="card">
       <div class="card-hd">
         <h2 class="card-title">買房參數</h2>
-        <label class="flex items-center gap-2 text-sm font-medium text-slate-700">
+        <label class="toggle-label flex items-center gap-2 text-sm font-medium">
           <input v-model="plan.buyHouse.value" class="size-4" type="checkbox">
           啟用買房規劃
         </label>
@@ -72,7 +72,7 @@ useHead({
           <input v-model.number="plan.loanYears.value" class="w-full" type="range" min="5" max="40" step="1">
         </label>
       </div>
-      <p v-else class="text-sm text-slate-500">啟用後可設定買房年度、頭期款、月付與貸款年限。</p>
+      <p v-else class="muted text-sm">啟用後可設定買房年度、頭期款、月付與貸款年限。</p>
     </section>
   </div>
 </template>

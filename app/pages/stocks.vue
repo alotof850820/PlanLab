@@ -20,7 +20,7 @@ const stockMetrics = computed(() => [
     label: '本月回報',
     value: '+6.1%',
     detail: '上月 +5.2%',
-    tone: 'text-slate-500',
+    tone: 'muted',
   },
 ])
 
@@ -54,7 +54,7 @@ useHead({
     <section class="kpi-grid grid-cols-1 md:grid-cols-3">
       <article v-for="metric in stockMetrics" :key="metric.label" class="kpi">
         <p class="kpi-label">{{ metric.label }}</p>
-        <p class="kpi-value" :class="metric.tone === 'dn' ? 'text-red-600' : metric.tone === 'up' ? 'text-slate-900' : metric.tone">
+        <p class="kpi-value" :class="metric.tone === 'dn' ? 'dn' : metric.tone === 'up' ? '' : metric.tone">
           {{ metric.value }}
         </p>
         <p class="kpi-delta" :class="metric.tone">
@@ -122,11 +122,11 @@ useHead({
         </thead>
         <tbody>
           <tr v-for="stock in stocks" :key="stock.sym">
-            <td class="table-td font-medium text-slate-900">{{ stock.sym }}</td>
-            <td class="table-td text-slate-500">{{ stock.name }}</td>
-            <td class="table-td text-slate-900">{{ stock.price }}</td>
-            <td class="table-td" :class="stock.up ? 'text-green-600' : 'text-red-600'">{{ stock.change }}</td>
-            <td class="table-td text-slate-500">{{ stock.cap }}</td>
+            <td class="table-td table-strong">{{ stock.sym }}</td>
+            <td class="table-td table-muted">{{ stock.name }}</td>
+            <td class="table-td table-strong">{{ stock.price }}</td>
+            <td class="table-td" :class="stock.up ? 'up' : 'dn'">{{ stock.change }}</td>
+            <td class="table-td table-muted">{{ stock.cap }}</td>
             <td class="table-td">
               <span class="tag" :class="ratingClass(stock.rating)">
                 {{ stock.rating }}

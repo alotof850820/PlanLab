@@ -63,7 +63,7 @@ const createConfig = (): ChartConfiguration<'line'> => ({
       tooltip: {
         backgroundColor: '#1d1e1b',
         bodyColor: '#f8fafc',
-        borderColor: 'rgba(166, 175, 189, 0.28)',
+        borderColor: 'rgba(193, 202, 216, 0.34)',
         borderWidth: 1,
         callbacks: {
           label: (context) => `總資產 ${formatWan(Number(context.parsed.y ?? 0))}`,
@@ -71,7 +71,7 @@ const createConfig = (): ChartConfiguration<'line'> => ({
         },
         displayColors: false,
         padding: 10,
-        titleColor: '#cbd5e1',
+        titleColor: '#e2e8f0',
       },
     },
     scales: {
@@ -83,7 +83,7 @@ const createConfig = (): ChartConfiguration<'line'> => ({
           display: false,
         },
         ticks: {
-          color: '#8491a0',
+          color: '#c1cad8',
           font: {
             size: 11,
           },
@@ -98,11 +98,11 @@ const createConfig = (): ChartConfiguration<'line'> => ({
           display: false,
         },
         grid: {
-          color: 'rgba(166, 175, 189, 0.12)',
+          color: 'rgba(193, 202, 216, 0.2)',
         },
         ticks: {
           callback: (value) => formatWan(Number(value)),
-          color: '#8491a0',
+          color: '#c1cad8',
           font: {
             size: 11,
           },

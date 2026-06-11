@@ -3,8 +3,14 @@
     {
       "id": "projectionlab-dashboard-figma-layout",
       "title": "ProjectionLab-Style Figma Dashboard Layout",
-      "status": "in_progress",
+      "status": "completed",
       "scope": "Create a PlanLab investment dashboard in the local Nuxt architecture based on the provided HTML and TSX references, including shared financial projection logic, Chart.js asset trend with hover tooltip and quantitative axes, a homepage limited to total assets/trend/allocation, stocks settings and withdrawal planning with stock metrics, settings principal control, house planning with house metrics, annual details, and documented Figma workflow."
+    },
+    {
+      "id": "planlab-contrast-accessibility-audit",
+      "title": "Improve Dark Dashboard Text And Table Contrast",
+      "status": "completed",
+      "scope": "Use Playwright-driven browser checks to audit visible text contrast across the local Nuxt dashboard, then improve low-contrast text, table cells, table headers, chart ticks, sidebar badges, and related dark-theme styles."
     },
     {
       "id": "playwright-mcp-global-install",

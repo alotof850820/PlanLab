@@ -8,8 +8,8 @@
   --color-border-secondary: #666964;
   --color-border-tertiary: #454741;
   --color-text-primary: #f8fafc;
-  --color-text-secondary: #a6afbd;
-  --color-text-tertiary: #8491a0;
+  --color-text-secondary: #c1cad8;
+  --color-text-tertiary: #a7b2c2;
   --border-radius-md: 6px;
   --border-radius-lg: 8px;
   color-scheme: dark;
@@ -93,11 +93,15 @@ body {
   }
 
   .up {
-    color: #16a34a;
+    color: #4ade80;
   }
 
   .dn {
-    color: #dc2626;
+    color: #f87171;
+  }
+
+  .muted {
+    color: var(--color-text-tertiary);
   }
 
   .card {
@@ -198,7 +202,7 @@ body {
   }
 
   .alloc-track {
-    background: #4b4c47;
+    background: #5c5f58;
     border-radius: 2px;
     flex: 1;
     height: 3px;
@@ -218,7 +222,8 @@ body {
   }
 
   .table-th {
-    border-bottom: 0.5px solid var(--color-border-tertiary);
+    background: #30312e;
+    border-bottom: 1px solid #5d6058;
     color: var(--color-text-secondary);
     font-size: 11px;
     font-weight: 500;
@@ -229,10 +234,47 @@ body {
   }
 
   .table-td {
-    border-bottom: 0.5px solid var(--color-border-tertiary);
+    border-bottom: 1px solid #4f524c;
     color: var(--color-text-primary);
     padding: 9px 10px;
     vertical-align: middle;
+  }
+
+  .table-strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .table-muted {
+    color: #b8c4d3;
+  }
+
+  .money-input {
+    color: #93c5fd;
+  }
+
+  .money-house {
+    color: #f9a8d4;
+  }
+
+  .money-growth {
+    color: #4ade80;
+  }
+
+  .money-negative {
+    color: #f87171;
+  }
+
+  .money-other {
+    color: #fbbf24;
+  }
+
+  .money-withdrawal {
+    color: #d8b4fe;
+  }
+
+  .toggle-label {
+    color: #d6dce6;
   }
 
   .tag {
@@ -276,7 +318,7 @@ body {
   }
 
   tbody tr:hover .table-td {
-    background: #30312e;
+    background: #353731;
   }
 }
 

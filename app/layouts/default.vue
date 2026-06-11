@@ -17,7 +17,7 @@
 
         <div class="border-b border-white/[0.07] px-3.5 pb-3.5 pt-[18px]">
           <NuxtLink to="/" class="flex items-center gap-[9px] overflow-hidden">
-            <span class="grid size-[30px] shrink-0 place-items-center rounded-[7px] bg-blue-500 text-sm font-medium text-white">
+            <span class="grid size-[30px] shrink-0 place-items-center rounded-[7px] bg-[#1d4ed8] text-sm font-medium text-white">
               P
             </span>
             <span
@@ -25,7 +25,7 @@
               :class="isCollapsed ? 'max-w-0 opacity-0' : 'max-w-40 opacity-100'"
             >
               <span class="block text-sm font-medium text-slate-100">PlanLab</span>
-              <span class="mt-px block text-[11px] text-slate-600">Investment Workspace</span>
+              <span class="mt-px block text-[11px] text-[#a7b6c8]">Investment Workspace</span>
             </span>
           </NuxtLink>
         </div>
@@ -82,7 +82,7 @@
             <IconBell class="size-4" :stroke="1.8" />
           </button>
           <button
-            class="grid size-7 place-items-center rounded-full bg-blue-500 text-[11px] font-medium text-white"
+            class="grid size-7 place-items-center rounded-full bg-[#1d4ed8] text-[11px] font-medium text-white"
             type="button"
             aria-label="帳戶"
           >
