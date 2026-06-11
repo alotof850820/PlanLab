@@ -53,6 +53,12 @@
       "title": "Match PlanLab UI To HTML Reference Style",
       "status": "completed",
       "scope": "Refresh the Nuxt dashboard UI to match planlab_dashboard_v3.html, including Tabler icons, compact dashboard colors, shared KPI/card/table/tag styles, reference-like Chart.js styling, period tabs, segmented asset allocation, and consistent page styling."
+    },
+    {
+      "id": "planlab-dark-main-theme",
+      "title": "Match Main Dashboard Dark Theme From Screenshot",
+      "status": "completed",
+      "scope": "Adjust the main dashboard background, topbar, footer, cards, KPI blocks, chart grid/ticks, borders, text colors, and homepage subtitle to match the provided dark screenshot style."
     }
   ]
 }

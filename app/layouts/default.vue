@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[var(--color-background-tertiary)] text-slate-900">
+  <div class="min-h-screen bg-[var(--color-background-tertiary)] text-[var(--color-text-primary)]">
     <div class="flex h-screen overflow-hidden">
       <aside
         class="relative flex shrink-0 flex-col bg-[#18202f] text-slate-100 transition-[width] duration-200"
@@ -68,14 +68,14 @@
       </aside>
 
       <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
-        <header class="flex h-[50px] shrink-0 items-center gap-2.5 border-b border-slate-200 bg-white px-5">
-          <div class="flex flex-1 items-center gap-1.5 text-[13px] text-slate-500">
-            <component :is="currentIcon" class="size-3.5 text-slate-400" :stroke="1.9" aria-hidden="true" />
-            <IconChevronRight class="size-3 text-slate-300" :stroke="2" aria-hidden="true" />
-            <span class="font-medium text-slate-900">{{ currentTitle }}</span>
+        <header class="flex h-[50px] shrink-0 items-center gap-2.5 border-b border-[#454741] bg-[var(--color-background-shell)] px-5">
+          <div class="flex flex-1 items-center gap-1.5 text-[13px] text-[var(--color-text-secondary)]">
+            <component :is="currentIcon" class="size-3.5 text-[#d6d6ce]" :stroke="1.9" aria-hidden="true" />
+            <IconChevronRight class="size-3 text-[#8e928b]" :stroke="2" aria-hidden="true" />
+            <span class="font-medium text-[var(--color-text-primary)]">{{ currentTitle }}</span>
           </div>
           <button
-            class="flex size-[30px] items-center justify-center rounded-md border border-slate-200 bg-white text-slate-500 transition hover:bg-slate-50 hover:text-slate-900"
+            class="flex size-[30px] items-center justify-center rounded-md border border-[#666964] bg-transparent text-[#d6d6ce] transition hover:bg-white/5 hover:text-white"
             type="button"
             aria-label="通知"
           >
@@ -94,7 +94,7 @@
           <slot />
         </main>
 
-        <footer class="flex h-9 shrink-0 items-center justify-between border-t border-slate-200 bg-white px-5 text-[11px] text-slate-500">
+        <footer class="flex h-9 shrink-0 items-center justify-between border-t border-[#454741] bg-[var(--color-background-shell)] px-5 text-[11px] text-[#f6e6a8]">
           <span>© 2026 PlanLab. All rights reserved.</span>
           <span>v0.3 shell</span>
         </footer>

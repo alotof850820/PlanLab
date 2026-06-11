@@ -114,3 +114,11 @@
 - Runtime content verification passed: `/` contained `財務成果總覽`, `總資產`, `資產變化趨勢`, `10Y`, `20Y`, `30Y`, `全部`, and `資產配置`.
 - Runtime content verification passed: `/stocks` contained `追蹤中的股票與 ETF`, `未實現損益`, `年化報酬`, `本月回報`, `TSMC`, `NVDA`, `buy`, `hold`, and `watch`.
 - Runtime content verification passed: `/house` contained `買房規劃`, `買房支出`, `頭期款`, `年房貸支出`, `貸款期間`, and `買房參數`.
+- User requested the main page background and component colors match the provided dark screenshot.
+- Updated `app/assets/css/main.css` with a dark dashboard palette: main background `#111211`, card/KPI background `#272826`, shell background `#2b2c29`, muted dark borders, light text, and screenshot-like scrollbar colors.
+- Updated `app/layouts/default.vue` so the main topbar and footer use the dark shell colors instead of white backgrounds.
+- Updated `app/components/AssetTrendChart.client.vue` with darker tooltip, grid, and tick colors for the dark chart surface.
+- Updated `app/pages/index.vue` homepage subtitle to `2026年6月11日 · 即時更新` to match the screenshot pattern.
+- Verification passed: `npm run build`.
+- Runtime content verification passed: `/` contained `財務成果總覽`, `2026年6月11日`, `總資產`, `資產變化趨勢`, and `資產配置`.
+- Runtime content verification passed: `/stocks` contained `股票`, `未實現損益`, `年化報酬`, `本月回報`, and `TSMC`.

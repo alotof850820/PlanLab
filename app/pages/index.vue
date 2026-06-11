@@ -45,7 +45,7 @@ useHead({
   <div class="page-shell space-y-4">
     <header class="mb-[18px]">
       <h1 class="page-title">財務成果總覽</h1>
-      <p class="page-sub">總資產、資產變化趨勢與資產配置</p>
+      <p class="page-sub">2026年6月11日 · 即時更新</p>
     </header>
 
     <section class="kpi-grid grid-cols-1">
