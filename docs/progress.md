@@ -301,3 +301,7 @@
 - Verification passed before deployment: `npm run test:dashboard-allocation`, `npm run test:home-trend`, `npm run test:kpi-animation`, `npm run test:remaining-animations`, `npm run test:homepage-entry`, `npm run audit:contrast`, `npm run test:tabler-types`, and escalated `npm run build`.
 - Verified the Vercel production alias `https://nuxt-hybrid-tailwind-20260610-15454.vercel.app/dashboard` returns HTTP 200 and includes dashboard SSR content after the main push.
 - GitHub repository rename to `planLab` is blocked in this environment because `gh` is not installed/authenticated and the available GitHub connector tools do not expose a repository rename/update operation.
+- User manually renamed the GitHub repository and requested the Vercel URL be renamed from the old `nuxt-hybrid-tailwind-20260610-15454.vercel.app` alias.
+- Confirmed Vercel project `prj_R1IGTxqvC5gOclvx7kLp9YNiHEzU` is now named `planlab`; exact alias `planlab.vercel.app` is unavailable because it is already in use.
+- Added `planlab-alotof850820.vercel.app` as a Vercel project domain/alias for the current production deployment and verified `https://planlab-alotof850820.vercel.app/dashboard` returns HTTP 200 with dashboard SSR content.
+- Updated `.vercel/project.json` and README to use the `planlab` Vercel project/domain naming.
