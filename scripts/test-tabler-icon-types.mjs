@@ -38,7 +38,10 @@ if (imports.size === 0) {
 }
 
 const virtualSource = [...imports]
-  .map((specifier, index) => `import Icon${index} from '${specifier}'\nvoid Icon${index}`)
+  .map(
+    (specifier, index) =>
+      `import Icon${index} from '${specifier}'\nconst props${index}: Parameters<typeof Icon${index}>[0] = { stroke: 2, size: 14, title: 'trend' }\nvoid props${index}`,
+  )
   .join('\n')
 
 const compilerOptions = {

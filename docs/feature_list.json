@@ -1,6 +1,18 @@
 {
   "features": [
     {
+      "id": "dev-branch-disable-vercel-deploy",
+      "title": "Create Dev Branch Without Vercel Auto Deploy",
+      "status": "completed",
+      "scope": "Create and push a dev branch that includes Vercel Git configuration disabling automatic deployments for that branch while preserving main production deployment behavior."
+    },
+    {
+      "id": "tabler-icon-numeric-stroke-types",
+      "title": "Allow Numeric Stroke Props For Tabler Icons",
+      "status": "completed",
+      "scope": "Fix Vue TypeScript diagnostics for deep-imported Tabler icons when templates pass numeric stroke props such as :stroke=\"2\", and verify the type regression."
+    },
+    {
       "id": "tabler-deep-import-types",
       "title": "Add Types For Tabler Deep Icon Imports",
       "status": "completed",

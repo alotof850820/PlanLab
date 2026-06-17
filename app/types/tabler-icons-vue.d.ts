@@ -1,7 +1,7 @@
 declare module '@tabler/icons-vue/dist/esm/icons/*.mjs' {
   import type { FunctionalComponent, SVGAttributes } from 'vue'
 
-  type TablerIconProps = SVGAttributes & {
+  type TablerIconProps = Omit<SVGAttributes, 'color' | 'stroke' | 'title'> & {
     color?: string
     size?: number | string
     stroke?: number | string

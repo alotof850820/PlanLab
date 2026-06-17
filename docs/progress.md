@@ -171,3 +171,28 @@
 - Vercel runtime verification passed: `GET /stocks` returned HTTP 200 and contained `投資基本設定`.
 - Vercel runtime verification passed: `GET /house` returned HTTP 200 and contained `買房規劃`.
 - Vercel runtime verification passed: `GET /api/health` returned HTTP 200 and contained `ok`.
+- User reported Vue TypeScript plugin diagnostic TS2322 for `<IconArrowUpRight :stroke="2" />`: `Type 'number' is not assignable to type 'string'`.
+- Added focused regression coverage to `scripts/test-tabler-icon-types.mjs` so each Tabler deep icon import must accept numeric `stroke` and `size` props.
+- RED verification passed as expected: `npm run test:tabler-types` failed with TS2322 for numeric `stroke`.
+- Fixed `app/types/tabler-icons-vue.d.ts` by omitting conflicting SVG attribute keys before adding Tabler-specific `color`, `size`, `stroke`, and `title` prop types.
+- Verification passed: `npm run test:tabler-types` reported `Typed 10 Tabler deep icon imports.`
+- Verification passed: `npm run build`.
+- Build notes: Nuxt build completed with existing sourcemap warnings from Nuxt/Tailwind plugins and a Node deprecation warning.
+- Added completed feature record `tabler-icon-numeric-stroke-types` to `docs/feature_list.json`.
+
+## 2026-06-17
+
+- User requested creating a `dev` branch environment that does not trigger Vercel deployment.
+- Confirmed from Vercel documentation that `vercel.json` `git.deploymentEnabled.dev = false` disables automatic deployments for the `dev` branch.
+- Confirmed local and remote `dev` branches did not already exist.
+- Created local branch `dev` from `main`.
+- Added `vercel.json` with branch-specific Vercel Git deployment disabled for `dev`.
+- Verification passed: `vercel.json` parsed successfully with `ConvertFrom-Json`.
+- Committed only `vercel.json` on `dev` as `06e1422` with message `chore: disable vercel deploys on dev branch`.
+- Pushed `dev` to `origin/dev`.
+- Verification passed: Vercel deployments list remained at 7 entries after the `dev` push, latest deployment still referenced `main` commit `e6d37bb`, and no `githubCommitRef: dev` deployment appeared.
+- Added completed feature record `dev-branch-disable-vercel-deploy` to `docs/feature_list.json`.
+- User requested committing the current working tree cleanly.
+- Verified current changes for Tabler icon numeric prop typing and workflow records.
+- Verification passed: `npm run test:tabler-types` reported `Typed 10 Tabler deep icon imports.`
+- Verification passed: `npm run build` after rerunning outside the sandbox; the sandboxed run was blocked by `EPERM: operation not permitted, readlink 'C:\Users\User'`.
