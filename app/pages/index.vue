@@ -20,10 +20,23 @@ const milestoneDots = [
   { left: '55%', bottom: '58%', color: '#22c55e' },
   { left: '75%', bottom: '74%', color: '#38bdf8' },
 ]
+const isExiting = ref(false)
+
+const startPlanning = (event: MouseEvent) => {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+
+  event.preventDefault()
+  if (isExiting.value) return
+
+  isExiting.value = true
+  window.setTimeout(() => {
+    void navigateTo('/dashboard')
+  }, 180)
+}
 </script>
 
 <template>
-  <main class="landing-page">
+  <main class="landing-page" :class="{ 'is-exiting': isExiting }">
     <nav class="landing-nav" aria-label="PlanLab">
       <NuxtLink class="brand" to="/" aria-label="PlanLab homepage">
         <span class="brand-mark">P</span>
@@ -36,7 +49,9 @@ const milestoneDots = [
         <a href="#resources">Resources</a>
       </div>
 
-      <NuxtLink class="nav-cta" to="/dashboard">Start planning</NuxtLink>
+      <NuxtLink class="nav-cta" data-transition="landing-to-dashboard" to="/dashboard" @click="startPlanning">
+        Start planning
+      </NuxtLink>
     </nav>
 
     <section class="hero-section" aria-labelledby="hero-title">
@@ -47,7 +62,9 @@ const milestoneDots = [
       </p>
 
       <div class="hero-actions">
-        <NuxtLink class="primary-cta" to="/dashboard">Start planning</NuxtLink>
+        <NuxtLink class="primary-cta" data-transition="landing-to-dashboard" to="/dashboard" @click="startPlanning">
+          Start planning
+        </NuxtLink>
         <span class="privacy-note">No account linking required</span>
       </div>
 
@@ -152,6 +169,14 @@ const milestoneDots = [
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.landing-page.is-exiting {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 
 .landing-nav {

@@ -7,9 +7,18 @@ const stockDetailItems = computed(() => plan.stockAssetBreakdown.value)
 const stockDetailTotal = computed(() => plan.finalValue.value)
 const stockDetailPercentBase = computed(() => Math.max(stockDetailTotal.value, 1))
 const activeStockDetailLabel = ref<string | null>(null)
+const stockDetailChanging = ref(false)
+let stockDetailTimer: ReturnType<typeof setTimeout> | null = null
 
 const stockDetailPercent = (value: number) => Math.round((value / stockDetailPercentBase.value) * 100)
 const stockDetailAmount = (value: number) => `${plan.formatWan(value)} 萬`
+const pulseStockDetail = () => {
+  stockDetailChanging.value = true
+  if (stockDetailTimer) clearTimeout(stockDetailTimer)
+  stockDetailTimer = setTimeout(() => {
+    stockDetailChanging.value = false
+  }, 720)
+}
 
 const stockMetrics = computed(() => [
   {
@@ -47,6 +56,15 @@ const stockMetrics = computed(() => [
 useHead({
   title: '股票 | PlanLab',
 })
+
+watch(
+  () => [plan.monthlyInput.value, plan.returnRate.value, plan.totalYears.value],
+  () => pulseStockDetail(),
+)
+
+onBeforeUnmount(() => {
+  if (stockDetailTimer) clearTimeout(stockDetailTimer)
+})
 </script>
 
 <template>
@@ -78,7 +96,11 @@ useHead({
       </AnimatedKpiCard>
     </section>
 
-    <section class="card alloc-card">
+    <section
+      class="card alloc-card impact-card"
+      :class="{ 'is-changing': stockDetailChanging }"
+      data-impact-card="stock-detail"
+    >
       <div class="card-hd">
         <h2 class="card-title">股票資產細節</h2>
         <p class="alloc-total-label">股票總額 {{ stockDetailAmount(stockDetailTotal) }}</p>

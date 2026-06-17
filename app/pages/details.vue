@@ -16,6 +16,7 @@ const detailRows = computed(() => {
     }
   })
 })
+const isHouseEventRow = (year: number) => plan.buyHouse.value && year === plan.houseYear.value
 
 useHead({
   title: '明細 | PlanLab',
@@ -45,8 +46,18 @@ useHead({
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in detailRows" :key="row.year">
-            <td class="table-td font-medium">第 {{ row.year }} 年</td>
+          <tr
+            v-for="row in detailRows"
+            :key="row.year"
+            class="detail-row"
+            :class="{ 'is-event-row': isHouseEventRow(row.year) }"
+            :data-event-row="isHouseEventRow(row.year) ? 'house-purchase' : undefined"
+            :data-event-year="isHouseEventRow(row.year) ? row.year : undefined"
+          >
+            <td class="table-td font-medium">
+              <span>第 {{ row.year }} 年</span>
+              <span v-if="isHouseEventRow(row.year)" class="detail-event-badge">買房事件</span>
+            </td>
             <td class="table-td table-muted text-right">{{ row.previousValue.toLocaleString() }}</td>
             <td class="table-td money-input text-right">{{ row.displayInput > 0 ? `+${row.displayInput.toLocaleString()}` : '-' }}</td>
             <td class="table-td money-house text-right">{{ row.houseLoan > 0 ? `-${row.houseLoan.toLocaleString()}` : '-' }}</td>

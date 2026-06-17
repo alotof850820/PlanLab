@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen bg-[var(--color-background-tertiary)] text-[var(--color-text-primary)]">
-    <div class="flex h-screen overflow-hidden">
+    <div class="app-shell flex h-screen overflow-hidden" data-shell-animation="staggered">
       <aside
-        class="relative flex shrink-0 flex-col bg-[#18202f] text-slate-100 transition-[width] duration-200"
+        class="app-sidebar relative flex shrink-0 flex-col bg-[#18202f] text-slate-100 transition-[width] duration-200"
         :class="isCollapsed ? 'w-[52px]' : 'w-[210px]'"
       >
         <button
@@ -35,7 +35,7 @@
             v-for="item in navItems"
             :key="item.to"
             :to="item.to"
-            class="flex items-center gap-[9px] overflow-hidden rounded-[7px] px-2 py-2 text-[13px] text-[#7a8fa8] transition hover:bg-white/[0.06] hover:text-slate-300"
+            class="sidebar-nav-item flex items-center gap-[9px] overflow-hidden rounded-[7px] px-2 py-2 text-[13px] text-[#7a8fa8] transition hover:bg-white/[0.06] hover:text-slate-300"
             active-class="bg-blue-500/15 text-blue-300"
           >
             <component :is="item.icon" class="size-[17px] shrink-0" :stroke="1.9" aria-hidden="true" />
@@ -53,7 +53,7 @@
             v-for="item in footerItems"
             :key="item.to"
             :to="item.to"
-            class="flex items-center gap-[9px] overflow-hidden rounded-[7px] px-2 py-2 text-[13px] text-[#7a8fa8] transition hover:bg-white/[0.06] hover:text-slate-300"
+            class="sidebar-nav-item flex items-center gap-[9px] overflow-hidden rounded-[7px] px-2 py-2 text-[13px] text-[#7a8fa8] transition hover:bg-white/[0.06] hover:text-slate-300"
             active-class="bg-blue-500/15 text-blue-300"
           >
             <component :is="item.icon" class="size-[17px] shrink-0" :stroke="1.9" aria-hidden="true" />
@@ -67,7 +67,7 @@
         </div>
       </aside>
 
-      <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div class="app-content flex min-w-0 flex-1 flex-col overflow-hidden">
         <header class="flex h-[50px] shrink-0 items-center gap-2.5 border-b border-[#454741] bg-[var(--color-background-shell)] px-5">
           <div class="flex flex-1 items-center gap-1.5 text-[13px] text-[var(--color-text-secondary)]">
             <component :is="currentIcon" class="size-3.5 text-[#d6d6ce]" :stroke="1.9" aria-hidden="true" />
@@ -90,7 +90,7 @@
           </button>
         </header>
 
-        <main class="min-h-0 flex-1 overflow-y-auto p-5">
+        <main class="app-main min-h-0 flex-1 overflow-y-auto p-5" data-page-transition="fade-slide">
           <slot />
         </main>
 

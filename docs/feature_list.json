@@ -1,6 +1,12 @@
 {
   "features": [
     {
+      "id": "remaining-judgment-focused-animations",
+      "title": "Finish Remaining Judgment-Focused Animations",
+      "status": "completed",
+      "scope": "Complete the remaining restrained animation roadmap: landing-to-dashboard transition, shell/page transition polish, slider impact feedback, and annual detail row highlights for house purchase events."
+    },
+    {
       "id": "kpi-count-up-change-animation",
       "title": "Add KPI Count-Up And Change Feedback",
       "status": "completed",
