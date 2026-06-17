@@ -1,6 +1,12 @@
 {
   "features": [
     {
+      "id": "readme-planlab-ai-agent-overview",
+      "title": "Document PlanLab Features And AI Agent Workflow",
+      "status": "completed",
+      "scope": "Update README with the live Vercel viewing URL, PlanLab feature overview, usage instructions, technical stack, and a summary of how the homepage and dashboard were completed with AI agent collaboration."
+    },
+    {
       "id": "projectionlab-style-homepage-entry",
       "title": "Add ProjectionLab-Style Homepage Entry",
       "status": "completed",

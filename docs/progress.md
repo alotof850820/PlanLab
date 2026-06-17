@@ -220,3 +220,7 @@
 - Runtime verification passed against `http://127.0.0.1:3100`: `/`, `/dashboard`, `/stocks`, `/house`, `/details`, and `/settings` each returned HTTP 200 with expected content markers.
 - Visual sanity verification passed: Playwright desktop/mobile screenshots showed the landing brand, CTA, product preview, no horizontal overflow, and no Nuxt DevTools overlay.
 - Marked `projectionlab-style-homepage-entry` completed in `docs/feature_list.json`.
+- User requested updating README to introduce the web app features, explain how AI agent collaboration completed the work, and provide a Vercel URL for viewing.
+- Verified the Vercel production URL `https://nuxt-hybrid-tailwind-20260610-15454.vercel.app/` returns HTTP 200; noted it currently reflects the `main` deployment and does not yet include the latest `dev` homepage until merged/pushed to `main`.
+- Updated `README.md` with PlanLab feature overview, usage flow, AI agent workflow, local development instructions, verification commands, technical stack, and project structure.
+- Added completed feature record `readme-planlab-ai-agent-overview` to `docs/feature_list.json`.
